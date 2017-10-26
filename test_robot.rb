@@ -10,6 +10,7 @@ class TestRobot < MiniTest::Test
     @robot.needs_repairs = false
     @robot.foreign_model = false
     @robot.vintage_model = false
+    @robot.todos = []
   end
   #
   # def teardown
@@ -49,7 +50,7 @@ class TestRobot < MiniTest::Test
 
   def test_that_robot_in_good_condition_sent_to_station_4
     # arrange
-
+    skip
     # act
     actual_value = @robot.needs_repairs
     # assert
@@ -58,13 +59,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
-
-      skip
     # arrange
 
     # act
-
+    actual_value = @robot.todos
     # assert
+    expected_value = []
+    assert_equal(actual_value, expected_value)
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value

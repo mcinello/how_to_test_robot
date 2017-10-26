@@ -19,7 +19,7 @@ class TestRobot < MiniTest::Test
     # act
     actual_value = @robot.needs_repairs
     # assert
-    expected_value = 'no'
+    expected_value = 'yes'
     assert_equal(actual_value, expected_value)
   end
 

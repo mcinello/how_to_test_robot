@@ -9,7 +9,7 @@ class TestRobot < MiniTest::Test
     @robot = Robot.new
     @robot.needs_repairs = true
     @robot.foreign_model = false
-    @robot.vintage_model = true
+    @robot.vintage_model = false
   end
   #
   # def teardown
@@ -29,7 +29,7 @@ class TestRobot < MiniTest::Test
 
   def test_that_vintage_robot_needing_repairs_sent_to_station_2
     # arrange
-
+    skip
     # act
     actual_value = @robot.needs_repairs && @robot.vintage_model
     # assert
@@ -38,13 +38,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_that_standard_robot_needing_repairs_sent_to_station_3
-
-      skip
     # arrange
 
     # act
-
+    actual_value = @robot.needs_repairs
     # assert
+    expected_value = true
+    assert_equal(actual_value, expected_value)
   end
 
   def test_that_robot_in_good_condition_sent_to_station_4

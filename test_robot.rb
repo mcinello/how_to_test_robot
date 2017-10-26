@@ -81,22 +81,22 @@ class TestRobot < MiniTest::Test
 
   def test_workday_on_day_off_returns_false
     # arrange
+    skip
+    # act
+    actual_value = @robot.day_off
+    # assert
+    expected_value = true
+    assert_equal(actual_value, expected_value)
+  end
+
+  def test_workday_not_day_off_returns_true
+    # arrange
 
     # act
     actual_value = @robot.day_off
     # assert
     expected_value = false
     assert_equal(actual_value, expected_value)
-  end
-
-  def test_workday_not_day_off_returns_true
-
-      skip
-    # arrange
-
-    # act
-
-    # assert
   end
 
 end

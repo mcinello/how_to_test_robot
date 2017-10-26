@@ -11,6 +11,7 @@ class TestRobot < MiniTest::Test
     @robot.foreign_model = false
     @robot.vintage_model = false
     @robot.todos = ['change oil', 'remove rust stains']
+    @robot.day_off = false
   end
   #
   # def teardown
@@ -70,7 +71,7 @@ class TestRobot < MiniTest::Test
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
     # arrange
-
+    skip
     # act
     actual_value = @robot.todos.length
     # assert
@@ -79,13 +80,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_workday_on_day_off_returns_false
-
-      skip
     # arrange
 
     # act
-
+    actual_value = @robot.day_off
     # assert
+    expected_value = false
+    assert_equal(actual_value, expected_value)
   end
 
   def test_workday_not_day_off_returns_true

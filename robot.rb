@@ -1,5 +1,4 @@
 class Robot
-  attr_reader :needs_repairs, :foreign_model, :vintage_model, :todos, :day_off
   attr_accessor :needs_repairs, :foreign_model, :vintage_model, :todos, :day_off
 
   def initialize

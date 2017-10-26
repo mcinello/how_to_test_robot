@@ -6,7 +6,9 @@ class TestRobot < MiniTest::Test
 
 
   def setup
-    @robot = Robot.new('yes')
+    @robot = Robot.new
+    @robot.needs_repairs = true
+    @robot.foreign_model = true
   end
   #
   # def teardown
@@ -15,11 +17,11 @@ class TestRobot < MiniTest::Test
 
   def test_that_foreign_robot_needing_repairs_sent_to_station_1
     # arrange
-    # happened in setuo
+    # happened in setup
     # act
-    actual_value = @robot.needs_repairs
+    actual_value = @robot.needs_repairs && @robot.foreign_model
     # assert
-    expected_value = 'yes'
+    expected_value = true
     assert_equal(actual_value, expected_value)
   end
 

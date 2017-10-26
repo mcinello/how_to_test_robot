@@ -1,21 +1,9 @@
 class Robot
+  attr_reader :needs_repairs, :foreign_model, :vintage_model, :todos, :day_off
   attr_accessor :needs_repairs, :foreign_model, :vintage_model, :todos, :day_off
 
-  def initialize(needs_repairs) #foreign_model, vintage_model, todos, day_off)
-    @needs_repairs = needs_repairs
-    # @foreign_model = foreign_model
-    # @vintage_model = vintage_model
+  def initialize
     @todos = []
-    # @day_off = day_off
-  end
-
-  # def self.create(needs_repairs, foreign_model, vintage_model, todos, day_off)
-  #   new_robot = Robot.new(needs_repairs, foreign_model, vintage_model, day_off)
-  # return new_robot
-  # end
-
-  def needs_repairs
-    @needs_repairs
   end
 
   def station

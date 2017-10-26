@@ -10,7 +10,7 @@ class TestRobot < MiniTest::Test
     @robot.needs_repairs = false
     @robot.foreign_model = false
     @robot.vintage_model = false
-    @robot.todos = []
+    @robot.todos = ['change oil', 'remove rust stains']
   end
   #
   # def teardown
@@ -60,7 +60,7 @@ class TestRobot < MiniTest::Test
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
     # arrange
-
+    skip
     # act
     actual_value = @robot.todos
     # assert
@@ -69,13 +69,13 @@ class TestRobot < MiniTest::Test
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
-
-      skip
     # arrange
 
     # act
-
+    actual_value = @robot.todos.length
     # assert
+    expected_value = 2
+    assert_equal(actual_value, expected_value)
   end
 
   def test_workday_on_day_off_returns_false
